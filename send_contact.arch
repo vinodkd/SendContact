@@ -1,0 +1,23 @@
+to-build: &send_contact
+    name: send_contact - a simple android intent to send a contact details via sms.
+    version: 1.0
+    with-features:
+        - &f1 ability to select any contact in the android contact list and send the name and number(s) via sms.
+    and-capabilities:
+        - &nf1 to fit within the normal sms limits.
+    
+    requires:
+        defining:
+            - the exact way in which this can be implemented
+            - the output format of the message
+        building:
+            - sms_contact_intent: an intent that is attached to the contact mgr's long press 
+            - core_logic: code that pulls data from contact mgr, formats an sms message and opens up the "send sms" activity with it
+        using:
+            - os: android
+            - language: java
+    realizing-architecture:
+        - user longpresses contact_mgr
+        - sms_contact_intent hooks_into contact_mgr
+        - sms_contact_intent calls core_logic
+        - core_logic bringsup send_msg_activity

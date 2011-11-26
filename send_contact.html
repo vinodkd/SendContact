@@ -1,0 +1,125 @@
+
+<html>
+  <head>
+    <title>Sid spec for send_contact - a simple android intent to send a contact details via sms. v 1.0</title>
+    <link rel="stylesheet" type="text/css" href="sid.css"/>
+  </head>
+  <body>
+    <div class="banner">
+      <span class="sidtext">Sid spec for </span> <span class="appname">send_contact - a simple android intent to send a contact details via sms. v 1.0 </span>
+    </div>
+    <div class="spec">
+      <div class="sidheader">
+        <span class="sidtext">To build </span> <span "apptext">send_contact - a simple android intent to send a contact details via sms. v 1.0</span>
+      </div>
+      <div class="sidbody">
+        <div class="features">
+  <div class="sidheader">
+    <span class="sidtext">with features:</span>
+  </div>
+  <div class="sidbody">
+
+    <div class='feature'>ability to select any contact in the android contact list and send the name and number(s) via sms.</div>
+  </div>
+  </div>
+  
+        <div class="capabilities">
+  <div class="sidheader">
+    <span class="sidtext">with capabilities:</span>
+  </div>
+  <div class="sidbody">
+
+    <div class='capability'>to fit within the normal sms limits.</div>
+</div>
+  </div>
+
+        <div class="requires">
+  <div class="sidheader">
+    <span class="sidtext">Requires:</span>
+  </div>
+  <div class="sidbody">
+  
+<div class="building">
+    <div class="sidheader">
+      <span class="sidtext">building:</span>
+      </div>
+      <div class="sidbody">
+    <div class="new_component">
+        <a class="sidlink" href="#sms_contact_intent"><span class="sidname">sms_contact_intent</span></a> : 
+        <span class="siddesc">an intent that is attached to the contact mgr's long press</span>
+      </div>
+    <div class="new_component">
+        <a class="sidlink" href="#core_logic"><span class="sidname">core_logic</span></a> : 
+        <span class="siddesc">code that pulls data from contact mgr, formats an sms message and opens up the "send sms" activity with it</span>
+      </div>
+  
+  </div>
+  </div>
+
+
+    
+  
+<div class="defining">
+    <div class="sidheader">
+      <span class="sidtext">defining:</span>
+      </div>
+      <div class="sidbody">
+      
+        <div class="dtask">the output format of the message</div>
+    
+    </div>
+  </div>
+
+
+    
+  <div class="using">
+    <div class="sidheader">
+      <span class="sidtext">using:</span>
+      </div>
+      <div class="sidbody">
+
+    <div class="existing_component">
+        <span class="sidname">os :</span>
+        <span class="siddesc">android</span>
+    </div>
+    <div class="existing_component">
+        <span class="sidname">language :</span>
+        <span class="siddesc">java</span>
+    </div>
+  
+  </div>
+</div>
+
+    
+  
+</div>
+</div>
+
+        
+<div class="arch">
+    <div class="sidheader">
+      <span class="sidtext">to realize the architecture:</span>
+      </div>
+      <div class="sidbody">
+  <img class="archimg" src="send_contact.png"/>
+  </div>
+</div>
+
+        
+  <div class="to_build_children">
+
+    <div class="sidheader">
+      <span id="suggestion">suggestion</span>
+    </div>
+    <div class="sidbody">
+    
+      <div class='suggestion'>add definitions for declared components</div>
+    
+    </div>
+
+  </div>
+
+      </div>
+    </div>
+  </body>
+</html>

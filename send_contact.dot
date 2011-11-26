@@ -1,0 +1,16 @@
+
+digraph G{
+        node[shape=box style="rounded,filled" fontname=Sans fillcolor="#ccccff"]  //i'm terrible partial to to perrywinkle blue ;)
+        //compound=true
+        //rankdir=LR
+        //outputMode=nodesfirst
+        
+    user -> contact_mgr [label="longpresses",color=gray, fontname=Sans fontsize="10"]
+      
+    sms_contact_intent -> contact_mgr [label="hooks_into",color=gray, fontname=Sans fontsize="10"]
+      
+    sms_contact_intent -> core_logic [label="calls",color=gray, fontname=Sans fontsize="10"]
+      
+    core_logic -> send_msg_activity [label="bringsup",color=gray, fontname=Sans fontsize="10"]
+      
+}

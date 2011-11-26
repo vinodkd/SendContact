@@ -1,0 +1,70 @@
+* {
+  -moz-border-radius: 7px 7px 7px 7px;
+  border-radius: 7px;
+}
+
+body {
+  font-family: "Helvetica Neue Light","Lucida Grande","Calibri","Arial",sans-serif;
+  -moz-box-shadow: 2px 2px 3px #888888;
+  -webkit-box-shadow: 2px 2px 3px #888888;
+  box-shadow: 2px 2px 3px #888888;
+}
+.banner {
+    background-color: #AAAAFF;
+    color: #330033;
+    padding: 5px;
+    -moz-border-radius: 7px 7px 0px 0px;
+    -webkit-border-radius: 7px 7px 0px 0px;
+    border-radius:7px 7px 0px 0px;
+    font-size:20;
+}
+
+.spec {
+    display: block;
+    margin: 5px 0;
+    padding: 2px 0 2px 10px;
+}
+
+.sidtext{
+  color: #777777;
+}
+
+.apptext, .sidlink, .feature, .capability, .dtask, .existing_component, .new_component{
+  color: blue;
+  margin : 2px;
+  padding: 2px;
+}
+.sidheader{
+}
+
+.sidbody{
+  margin : 2px;
+  padding-left: 2%;
+}
+.appname{
+  color: green;
+  font-weight: bold;
+}
+.sidname{
+  color:blue;
+  font-weight: bold;
+}
+
+.siddesc{
+  color: black;
+}
+
+.suggestion{
+  background-color: lightgreen;
+  -moz-box-shadow: 2px 2px 3px #888888;
+  -webkit-box-shadow: 2px 2px 3px #888888;
+  box-shadow: 2px 2px 3px #888888;
+  padding: 2px;
+}
+
+.archimg{
+  -moz-box-shadow: 2px 2px 3px #888888;
+  -webkit-box-shadow: 2px 2px 3px #888888;
+  box-shadow: 2px 2px 3px #888888;
+  padding: 2px;
+}
