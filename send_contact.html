@@ -1,16 +1,16 @@
 
 <html>
   <head>
-    <title>Sid spec for send_contact - a simple android intent to send a contact details via sms. v 1.0</title>
+    <title>Sid spec for send_contact - a simple android app to send a contact details via sms. v 1.0</title>
     <link rel="stylesheet" type="text/css" href="sid.css"/>
   </head>
   <body>
     <div class="banner">
-      <span class="sidtext">Sid spec for </span> <span class="appname">send_contact - a simple android intent to send a contact details via sms. v 1.0 </span>
+      <span class="sidtext">Sid spec for </span> <span class="appname">send_contact - a simple android app to send a contact details via sms. v 1.0 </span>
     </div>
     <div class="spec">
       <div class="sidheader">
-        <span class="sidtext">To build </span> <span "apptext">send_contact - a simple android intent to send a contact details via sms. v 1.0</span>
+        <span class="sidtext">To build </span> <span "apptext">send_contact - a simple android app to send a contact details via sms. v 1.0</span>
       </div>
       <div class="sidbody">
         <div class="features">
@@ -45,8 +45,12 @@
       </div>
       <div class="sidbody">
     <div class="new_component">
+        <a class="sidlink" href="#contact_list"><span class="sidname">contact_list</span></a> : 
+        <span class="siddesc">The main screen containing a list of all contacts on the phone</span>
+      </div>
+    <div class="new_component">
         <a class="sidlink" href="#sms_contact_intent"><span class="sidname">sms_contact_intent</span></a> : 
-        <span class="siddesc">an intent that is attached to the contact mgr's long press</span>
+        <span class="siddesc">an intent that is attached to the contact mgr's click</span>
       </div>
     <div class="new_component">
         <a class="sidlink" href="#core_logic"><span class="sidname">core_logic</span></a> : 
@@ -65,6 +69,8 @@
       </div>
       <div class="sidbody">
       
+        <div class="dtask">the exact way in which this can be implemented. DONE. Android doesnt allow menus of apps being changed from the outside. will therefore have to build own contact app first.</div>
+    
         <div class="dtask">the output format of the message</div>
     
     </div>

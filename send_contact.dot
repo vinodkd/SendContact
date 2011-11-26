@@ -5,9 +5,9 @@ digraph G{
         //rankdir=LR
         //outputMode=nodesfirst
         
-    user -> contact_mgr [label="longpresses",color=gray, fontname=Sans fontsize="10"]
+    app -> contact_list [label="loads",color=gray, fontname=Sans fontsize="10"]
       
-    sms_contact_intent -> contact_mgr [label="hooks_into",color=gray, fontname=Sans fontsize="10"]
+    user -> sms_contact_intent [label="chooses",color=gray, fontname=Sans fontsize="10"]
       
     sms_contact_intent -> core_logic [label="calls",color=gray, fontname=Sans fontsize="10"]
       
