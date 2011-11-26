@@ -1,3 +1,0 @@
-INDEX VERSION 1.126+/Users/vinodkd/projects/send_contact/.metadata/.plugins/org.eclipse.jdt.core
-118514156.index
-424739418.index
