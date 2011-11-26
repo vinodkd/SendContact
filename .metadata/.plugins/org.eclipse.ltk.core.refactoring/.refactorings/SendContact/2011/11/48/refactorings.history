@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;org.pravin.android.sendcontact.ListContactsActivity.populateContactList().cursor&apos; in &apos;org.pravin.android.sendcontact.ListContactsActivity.populateContactList()&apos; to field&#x0A;- Original project: &apos;SendContact&apos;&#x0A;- Original element: &apos;org.pravin.android.sendcontact.ListContactsActivity.populateContactList().cursor&apos;&#x0A;- Field name: &apos;cursor&apos;&#x0A;- Initialize field in method&#x0A;- Declared visibility: &apos;private&apos;" description="Convert local variable &apos;cursor&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src&lt;org.pravin.android.sendcontact{ListContactsActivity.java" name="cursor" selection="1044 0" stamp="1322339754152" static="false" version="1.0" visibility="2"/>
+</session>
