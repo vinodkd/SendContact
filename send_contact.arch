@@ -11,14 +11,15 @@ to-build: &send_contact
             - the exact way in which this can be implemented. DONE. Android doesnt allow menus of apps being changed from the outside. will therefore have to build own contact app first.
             - the output format of the message
         building:
-            - contact_list: The main screen containing a list of all contacts on the phone
-            - sms_contact_intent: an intent that is attached to the contact mgr's click 
-            - core_logic: code that pulls data from contact mgr, formats an sms message and opens up the "send sms" activity with it
+            - pick_contact_launcher: The main screen that launches existing activity to pick a contact
+            - get_chosen_contact_dtls: logic that gets the details for the chosen contact. Asynctask.
+            - sms_launcher: code that formats an sms message and opens up the "send sms" activity with it
         using:
+            - pick_contact_activity: existing activity to pick a contact
             - os: android
             - language: java
     realizing-architecture:
-        - app loads contact_list
-        - user chooses sms_contact_intent
-        - sms_contact_intent calls core_logic
-        - core_logic bringsup send_msg_activity
+        - pick_contact_launcher loads pick_contact_activity
+        - pick_contact_activity triggers get_chosen_contact_dtls
+        - get_chosen_contact_dtls triggers sms_launcher
+        

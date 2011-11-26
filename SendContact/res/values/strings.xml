@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, ListContactsActivity!</string>
     <string name="app_name">SendContact</string>
+    <string name="sendContactBySMS">Send contact by SMS</string>
 
 </resources>

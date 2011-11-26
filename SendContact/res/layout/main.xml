@@ -5,12 +5,11 @@
     android:gravity="center"
     android:orientation="vertical" >
 
-    <ListView
-        android:id="@+id/listContacts"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/pickContactButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top" >
-
-    </ListView>
+        android:layout_gravity="center"
+        android:text="@string/sendContactBySMS" />
 
 </LinearLayout>

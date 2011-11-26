@@ -5,12 +5,10 @@ digraph G{
         //rankdir=LR
         //outputMode=nodesfirst
         
-    app -> contact_list [label="loads",color=gray, fontname=Sans fontsize="10"]
+    pick_contact_launcher -> pick_contact_activity [label="loads",color=gray, fontname=Sans fontsize="10"]
       
-    user -> sms_contact_intent [label="chooses",color=gray, fontname=Sans fontsize="10"]
+    pick_contact_activity -> get_chosen_contact_dtls [label="triggers",color=gray, fontname=Sans fontsize="10"]
       
-    sms_contact_intent -> core_logic [label="calls",color=gray, fontname=Sans fontsize="10"]
-      
-    core_logic -> send_msg_activity [label="bringsup",color=gray, fontname=Sans fontsize="10"]
+    get_chosen_contact_dtls -> sms_launcher [label="triggers",color=gray, fontname=Sans fontsize="10"]
       
 }

@@ -45,16 +45,16 @@
       </div>
       <div class="sidbody">
     <div class="new_component">
-        <a class="sidlink" href="#contact_list"><span class="sidname">contact_list</span></a> : 
-        <span class="siddesc">The main screen containing a list of all contacts on the phone</span>
+        <a class="sidlink" href="#pick_contact_launcher"><span class="sidname">pick_contact_launcher</span></a> : 
+        <span class="siddesc">The main screen that launches existing activity to pick a contact</span>
       </div>
     <div class="new_component">
-        <a class="sidlink" href="#sms_contact_intent"><span class="sidname">sms_contact_intent</span></a> : 
-        <span class="siddesc">an intent that is attached to the contact mgr's click</span>
+        <a class="sidlink" href="#get_chosen_contact_dtls"><span class="sidname">get_chosen_contact_dtls</span></a> : 
+        <span class="siddesc">logic that gets the details for the chosen contact. Asynctask.</span>
       </div>
     <div class="new_component">
-        <a class="sidlink" href="#core_logic"><span class="sidname">core_logic</span></a> : 
-        <span class="siddesc">code that pulls data from contact mgr, formats an sms message and opens up the "send sms" activity with it</span>
+        <a class="sidlink" href="#sms_launcher"><span class="sidname">sms_launcher</span></a> : 
+        <span class="siddesc">code that formats an sms message and opens up the "send sms" activity with it</span>
       </div>
   
   </div>
@@ -84,6 +84,10 @@
       </div>
       <div class="sidbody">
 
+    <div class="existing_component">
+        <span class="sidname">pick_contact_activity :</span>
+        <span class="siddesc">existing activity to pick a contact</span>
+    </div>
     <div class="existing_component">
         <span class="sidname">os :</span>
         <span class="siddesc">android</span>
