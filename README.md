@@ -4,6 +4,7 @@ SendContact:  A simple Android App to send any contact as an SMS.
 SendContact is a simple app that allows you to send the primary phone number of any contact on your android phone as an SMS.
 
 This was built for two reasons:
+
 1. Android's default Contacts Manager doesnt have this feature and its a useful one.
 2. To learn android development.
 
