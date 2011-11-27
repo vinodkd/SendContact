@@ -15,7 +15,7 @@ Next steps:
 
 Notes:
 ------
-* I went through a phase of expecting to be able to add a new menu item to the existing contact manager's context menu, which is reflected in the original version of the architecture document
+* I went through a phase of expecting to be able to add a new menu item to the existing contact manager's context menu, which is reflected in the original version of the [architecture document](https://raw.github.com/vinodkd/SendContact/master/send_contact.html)
 * For the most part, the code follows the BusinessCard example from the Android Documentation
 * The SMS sending code is essentially taken from [Mobiforge](http://mobiforge.com/developing/story/sms-messaging-android)
 * I used the free online book [Learning Android]( http://ofps.oreilly.com/titles/9781449390501/index.html) to get the basics right. Highly recommended.
