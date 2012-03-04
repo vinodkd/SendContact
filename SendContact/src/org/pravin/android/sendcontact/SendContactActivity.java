@@ -1,5 +1,8 @@
 package org.pravin.android.sendcontact;
 
+import java.util.List;
+import java.util.Set;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -24,6 +27,24 @@ public class SendContactActivity extends Activity implements OnClickListener {
         pickContactButton.setOnClickListener(this);
         
         contentAccessor = new ContentAccessor();
+        
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String action = intent.getAction();
+        if (Intent.ACTION_SEND.equals(action)) {
+        	if (extras.containsKey(Intent.EXTRA_STREAM)) {
+        		Uri uri = (Uri) extras.getParcelable(Intent.EXTRA_STREAM);
+        		Uri.Builder ub = new Uri.Builder();
+        		List<String> l = uri.getPathSegments();
+        		ub.scheme(uri.getScheme());
+        		ub.authority(uri.getAuthority());
+        		ub.appendPath(l.get(0));
+        		ub.appendPath("lookup");
+        		ub.appendPath(l.get(2));
+        		ub.appendPath("1");
+        		launchSMSActivity(ub.build());
+        	}
+        }
     }
 
 	public void onClick(View v) {
