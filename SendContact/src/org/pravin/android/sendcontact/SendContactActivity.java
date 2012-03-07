@@ -23,8 +23,8 @@ public class SendContactActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        Button pickContactButton = (Button) findViewById(R.id.pickContactButton);
-        pickContactButton.setOnClickListener(this);
+//        Button pickContactButton = (Button) findViewById(R.id.pickContactButton);
+//        pickContactButton.setOnClickListener(this);
         
         contentAccessor = new ContentAccessor();
         
@@ -33,6 +33,13 @@ public class SendContactActivity extends Activity implements OnClickListener {
         String action = intent.getAction();
         if (Intent.ACTION_SEND.equals(action)) {
         	if (extras.containsKey(Intent.EXTRA_STREAM)) {
+        		// convert uri from as-vcard to lookup
+        		// for example, from
+        		// content://com.android.contacts/contacts/as_vcard/0r1-5349475D454947532D472D
+        		// content://com.android.contacts/contacts/lookup/0r1-5349475D454947532D472D/1
+        		// this is a workaround to get the launchSMSActivity 
+        		// treat the Uri identically between when launch via Share
+        		// and via pickContactButton.
         		Uri uri = (Uri) extras.getParcelable(Intent.EXTRA_STREAM);
         		Uri.Builder ub = new Uri.Builder();
         		List<String> l = uri.getPathSegments();
