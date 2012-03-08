@@ -15,6 +15,7 @@ import android.widget.Button;
 public class SendContactActivity extends Activity implements OnClickListener {
 	private static final String TAG= "ListContactsActivity";
 	private static final int PICK_CONTACT_REQUEST = 1;
+	private static final int CONTACT_SENT_REQUEST = 2;
 	private ContentAccessor contentAccessor;
 	
 	/** Called when the activity is first created. */
@@ -33,23 +34,14 @@ public class SendContactActivity extends Activity implements OnClickListener {
         String action = intent.getAction();
         if (Intent.ACTION_SEND.equals(action)) {
         	if (extras.containsKey(Intent.EXTRA_STREAM)) {
-        		// convert uri from as-vcard to lookup
-        		// for example, from
+        		// The URI returned from the Intent is 
+        		// a vcard.
+        		// for example
         		// content://com.android.contacts/contacts/as_vcard/0r1-5349475D454947532D472D
-        		// content://com.android.contacts/contacts/lookup/0r1-5349475D454947532D472D/1
-        		// this is a workaround to get the launchSMSActivity 
-        		// treat the Uri identically between when launch via Share
-        		// and via pickContactButton.
+        		// or
+        		// file:///sdcard/.blur/vcard/211.vcf
         		Uri uri = (Uri) extras.getParcelable(Intent.EXTRA_STREAM);
-        		Uri.Builder ub = new Uri.Builder();
-        		List<String> l = uri.getPathSegments();
-        		ub.scheme(uri.getScheme());
-        		ub.authority(uri.getAuthority());
-        		ub.appendPath(l.get(0));
-        		ub.appendPath("lookup");
-        		ub.appendPath(l.get(2));
-        		ub.appendPath("1");
-        		launchSMSActivity(ub.build());
+        		launchSMSActivity(uri);
         	}
         }
     }
@@ -67,6 +59,13 @@ public class SendContactActivity extends Activity implements OnClickListener {
 		if(reqCode == PICK_CONTACT_REQUEST && resCode == RESULT_OK){
 			launchSMSActivity(data.getData());
 		}
+		else if (reqCode == CONTACT_SENT_REQUEST){
+			// once the SMS intent is complete (user either sends the SMS
+			// or discards it, this callback will be invoked.
+			// no need to look at resCode as we don't care about if the user 
+			// sent or canceled it.
+			finish();
+		}
 	}
 
 	private void launchSMSActivity(Uri data) {
@@ -74,7 +73,7 @@ public class SendContactActivity extends Activity implements OnClickListener {
 
 			@Override
 			protected ContactInfo doInBackground(Uri... params) {
-				return contentAccessor.loadContact(getContentResolver(),params[0]);
+				return contentAccessor.loadContactFromVCard(getContentResolver(),params[0]);
 			}
 			
 			@Override
@@ -82,7 +81,7 @@ public class SendContactActivity extends Activity implements OnClickListener {
 		        Intent sendIntent = new Intent(Intent.ACTION_VIEW);
 		        sendIntent.putExtra("sms_body", result.getName() + ": Ph: "+ result.getPhoneNumber()); 
 		        sendIntent.setType("vnd.android-dir/mms-sms");
-		        startActivity(sendIntent);
+		        startActivityForResult(sendIntent, CONTACT_SENT_REQUEST);
 			}
 		};
 		task.execute(data);
