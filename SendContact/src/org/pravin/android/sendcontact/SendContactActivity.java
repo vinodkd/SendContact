@@ -4,13 +4,16 @@ import java.util.List;
 import java.util.Set;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class SendContactActivity extends Activity implements OnClickListener {
 	private static final String TAG= "ListContactsActivity";
@@ -43,6 +46,18 @@ public class SendContactActivity extends Activity implements OnClickListener {
         		Uri uri = (Uri) extras.getParcelable(Intent.EXTRA_STREAM);
         		launchSMSActivity(uri);
         	}
+        }
+        else {
+        	Context context = getApplicationContext();
+        	CharSequence text = 
+        		"Launch this app by selecting \"Menu\" then \"Share\" from the Contacts list.";
+        	int duration = Toast.LENGTH_LONG;
+
+        	Toast toast = Toast.makeText(context, text, duration);
+        	toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 
+        			0, 0);
+        	toast.show();
+        	finish();
         }
     }
 
