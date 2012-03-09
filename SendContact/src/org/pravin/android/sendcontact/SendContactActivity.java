@@ -50,7 +50,7 @@ public class SendContactActivity extends Activity implements OnClickListener {
         else {
         	Context context = getApplicationContext();
         	CharSequence text = 
-        		"Launch this app by selecting \"Menu\" then \"Share\" from the Contacts list.";
+        		"To launch this app, go to the Contact list, select \"Menu\" then \"Share\".";
         	int duration = Toast.LENGTH_LONG;
 
         	Toast toast = Toast.makeText(context, text, duration);
